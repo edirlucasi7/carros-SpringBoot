@@ -18,6 +18,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.carros.domain.Carro;
 import com.carros.domain.CarroService;
+import com.carros.domain.DataService;
 import com.carros.domain.dto.CarroDTO;
 
 
@@ -27,6 +28,9 @@ public class CarrosController {
 	
 	@Autowired
 	private CarroService service; 
+	
+	@Autowired
+	private DataService serviceData; 
 
 	@GetMapping()
 	public ResponseEntity<List<CarroDTO>> get() {
@@ -92,6 +96,17 @@ public class CarrosController {
 		
 		return ResponseEntity.ok().build();
 				
+	}
+	
+	@GetMapping("/data")
+	public void mostraDataTeste() {
+		serviceData.localDate();
+	
+	}
+	
+	@GetMapping("/dataHora")
+	public void mostraDataHoraTeste() {
+		serviceData.localDateTime();
 	}
 	
 	@DeleteMapping()

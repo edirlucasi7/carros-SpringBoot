@@ -46,7 +46,7 @@ public class User implements UserDetails {
 	public static void main(String[] args) {
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		System.out.println(encoder.encode("icetydevjunior"));
+		System.out.println(encoder.encode("123"));
 	}
 
 	@Override
