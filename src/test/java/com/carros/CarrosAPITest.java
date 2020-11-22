@@ -41,7 +41,7 @@ public class CarrosAPITest extends BaseAPITest {
         carro.setTipo("esportivos");
 
         // Insert
-        ResponseEntity response = post("/api/v1/carros", carro, null);
+        ResponseEntity<?> response = post("/api/v1/carros", carro, null);
         System.out.println(response);
 
         // Verifica se criou
@@ -93,7 +93,7 @@ public class CarrosAPITest extends BaseAPITest {
     @Test
     public void testGetNotFound() {
 
-        ResponseEntity response = getCarro("/api/v1/carros/1100");
+        ResponseEntity<?> response = getCarro("/api/v1/carros/1100");
         assertEquals(response.getStatusCode(), HttpStatus.NOT_FOUND);
     }
 }

@@ -25,7 +25,7 @@ public class TokenJwtTest {
     @Test
     public void testToken() {
 
-        // Le usuário
+        // Lê usuário
         UserDetails user = userDetailsService.loadUserByUsername("admin");
         assertNotNull(user);
 
